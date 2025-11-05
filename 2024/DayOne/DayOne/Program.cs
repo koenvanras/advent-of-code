@@ -1,32 +1,15 @@
 ﻿try
 {
-	List<int> ListTest = File.ReadLines("./input.txt")
+	List<int> ListOne = File.ReadLines("./input.txt")
 							.Select(line => int.Parse(line.Split((char[])null, StringSplitOptions.RemoveEmptyEntries)[0]))
 							.OrderBy(number => number)
 							.ToList();
-	List<int> ListOne = new();
-	List<int> ListTwo = new();
+	List<int> ListTwo = File.ReadLines("./input.txt")
+                            .Select(line => int.Parse(line.Split((char[])null, StringSplitOptions.RemoveEmptyEntries)[1]))
+                            .OrderBy(number => number)
+                            .ToList(); ;
 
 	int result = 0;
-
-	//Create lists based on txt file
-	foreach (var line in File.ReadLines("./input.txt"))
-	{
-		// Split numbers in line
-        var split = line.Split((char[])null, StringSplitOptions.RemoveEmptyEntries);
-
-		// Add split numbers to list
-		ListOne.Add(int.Parse(split[0]));
-		ListTwo.Add(int.Parse(split[1]));
-	}
-
-	Console.WriteLine(ListOne.SequenceEqual(ListTest));
-
-	// Sort the lists
-	ListOne.Sort();
-	ListTwo.Sort();
-
-    Console.WriteLine(ListOne.SequenceEqual(ListTest));
 
     for (int i = 0; i < ListOne.Count; i++)
 	{
