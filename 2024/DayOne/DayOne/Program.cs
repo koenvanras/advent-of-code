@@ -16,7 +16,7 @@
 	{
         // Calculate
         var distanceCount = Math.Abs(ListOne[i] - ListTwo[i]);
-        var similarityCount = ListTwo.Count(number => number == ListOne[i]);
+        var similarityCount = ListOne[i] * ListTwo.Count(number => number == ListOne[i]);
 
         // Print calculation information to console
         Console.WriteLine($"{i}: {ListOne[i]} -> {ListTwo[i]} = Distance: {distanceCount}, Similarity: {similarityCount}");
