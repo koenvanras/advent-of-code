@@ -1,5 +1,9 @@
 ﻿try
 {
+	List<int> ListTest = File.ReadLines("./input.txt")
+							.Select(line => int.Parse(line.Split((char[])null, StringSplitOptions.RemoveEmptyEntries)[0]))
+							.OrderBy(number => number)
+							.ToList();
 	List<int> ListOne = new();
 	List<int> ListTwo = new();
 
@@ -16,11 +20,15 @@
 		ListTwo.Add(int.Parse(split[1]));
 	}
 
+	Console.WriteLine(ListOne.SequenceEqual(ListTest));
+
 	// Sort the lists
 	ListOne.Sort();
 	ListTwo.Sort();
 
-	for (int i = 0; i < ListOne.Count; i++)
+    Console.WriteLine(ListOne.SequenceEqual(ListTest));
+
+    for (int i = 0; i < ListOne.Count; i++)
 	{
         Console.WriteLine($"{i}: {ListOne[i]} -> {ListTwo[i]} = {Math.Abs(ListOne[i] - ListTwo[i])}");
         result += Math.Abs(ListOne[i] - ListTwo[i]);
