@@ -8,20 +8,26 @@
                             .Select(line => int.Parse(line.Split((char[])null, StringSplitOptions.RemoveEmptyEntries)[1]))
                             .OrderBy(number => number)
                             .ToList();
-	int result = 0;
+	int distance = 0;
+    int similarity = 0;
 
     // Note: Looping list one count because there should always be 2 points to calculate distance
     for (int i = 0; i < ListOne.Count; i++)
 	{
-        // Print calculation information to console
-        Console.WriteLine($"{i}: {ListOne[i]} -> {ListTwo[i]} = {Math.Abs(ListOne[i] - ListTwo[i])}");
+        // Calculate
+        var distanceCount = Math.Abs(ListOne[i] - ListTwo[i]);
+        var similarityCount = ListTwo.Count(number => number == ListOne[i]);
 
-        // Add calculation between points too the result
-        result += Math.Abs(ListOne[i] - ListTwo[i]);
+        // Print calculation information to console
+        Console.WriteLine($"{i}: {ListOne[i]} -> {ListTwo[i]} = Distance: {distanceCount}, Similarity: {similarityCount}");
+
+        // Add calculations to results
+        distance += distanceCount;
+        similarity += similarityCount;
     }
 
-    // Print result to console
-    Console.WriteLine(result.ToString());
+    // Print results to console
+    Console.WriteLine($"Total distance: {distance}, Similarity score: {similarity}");
 
     Console.ReadLine();
 }
