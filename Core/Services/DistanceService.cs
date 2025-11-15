@@ -9,7 +9,7 @@ namespace Core.Services
         {
             // Check if lists have the same lenght, else fail
             if (listOne.Count != listTwo.Count)
-                throw new ArgumentException("Lists are not the same lenght.");
+                throw new ArgumentException("Lists are not the same length.");
 
             // Order the lists for proper calculation
             var orderedListOne = listOne.OrderBy(number => number).ToList();
