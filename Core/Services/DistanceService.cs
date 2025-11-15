@@ -7,7 +7,7 @@ namespace Core.Services
         /// <inheritdoc/>
         public IEnumerable<int> CalculateDistances(List<int> listOne, List<int> listTwo)
         {
-            // Check if lists have the same lenght, else fail
+            // Check if lists have the same length, else fail
             if (listOne.Count != listTwo.Count)
                 throw new ArgumentException("Lists are not the same length.");
 
