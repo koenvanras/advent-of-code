@@ -11,16 +11,12 @@ namespace Core.Services
             if (listOne.Count != listTwo.Count)
                 throw new ArgumentException("Lists are not the same length.");
 
-            // Order the lists for proper calculation
-            var orderedListOne = listOne.OrderBy(number => number).ToList();
-            var orderedListTwo = listTwo.OrderBy(number => number).ToList();
-
             var result = new List<int>();
 
             // Note: Looping list one count because there should always be 2 points to calculate distance
             for (int i = 0; i < listOne.Count; i++)
             {
-                var distanceCount = Math.Abs(orderedListOne[i] - orderedListTwo[i]);
+                var distanceCount = Math.Abs(listOne[i] - listTwo[i]);
                 result.Add(distanceCount);
             }
 

@@ -17,11 +17,9 @@ namespace Client.Controllers
             // Declare and initialize the lists to calculate distance
             List<int> listOne = File.ReadLines("./2024_1.txt")
                                 .Select(line => int.Parse(line.Split((char[])null, StringSplitOptions.RemoveEmptyEntries)[0]))
-                                .OrderBy(number => number)
                                 .ToList();
             List<int> listTwo = File.ReadLines("./2024_1.txt")
                                 .Select(line => int.Parse(line.Split((char[])null, StringSplitOptions.RemoveEmptyEntries)[1]))
-                                .OrderBy(number => number)
                                 .ToList();
 
             // Get the total distance of the two lists
