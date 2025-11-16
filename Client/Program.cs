@@ -37,10 +37,7 @@ class Program
         // 2024 - Day Two - Part 1: Calculate safe reports
         Console.WriteLine("\n2024 - Day Two - Part 1: Calculate safe reports");
         var redNoseReportController = host.Services.GetService<RedNoseReportController>();
-        var safeReports = redNoseReportController.CalculateSimilarityScore();
-
-        // 2024 - Day Two - Part 2: Calculate safe reports with tolerance
-        Console.WriteLine("\n2024 - Day Two - Part 2: Calculate safe reports with tolerance");
+        var safeReports = redNoseReportController.GetSafeReportCount();
 
         #endregion
 

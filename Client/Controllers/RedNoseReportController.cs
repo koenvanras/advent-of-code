@@ -12,7 +12,7 @@ namespace Client.Controllers
             _redNoseReportService = redNoseReportService;
         }
 
-        public int CalculateSimilarityScore()
+        public int GetSafeReportCount()
         {
             // Declare and initialize the lists to safe reports
             List<List<int>> reports = File.ReadLines("./2024_2.txt")
