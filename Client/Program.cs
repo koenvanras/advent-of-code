@@ -14,6 +14,7 @@ class Program
                 services.AddCoreServices();
                 services.AddScoped<DistanceController>();
                 services.AddScoped<SimilarityController>();
+                services.AddScoped<RedNoseReportController>();
             })
             .Build();
 
@@ -28,6 +29,18 @@ class Program
         Console.WriteLine("\n2024 - Day One - Part 2: Calculate similarity score");
         var similarityController = host.Services.GetRequiredService<SimilarityController>();
         var similarityScore = similarityController.CalculateSimilarityScore();
+
+        #endregion
+
+        #region 2024 - Day Two
+
+        // 2024 - Day Two - Part 1: Calculate safe reports
+        Console.WriteLine("\n2024 - Day Two - Part 1: Calculate safe reports");
+        var redNoseReportController = host.Services.GetService<RedNoseReportController>();
+        var safeReports = redNoseReportController.CalculateSimilarityScore();
+
+        // 2024 - Day Two - Part 2: Calculate safe reports with tolerance
+        Console.WriteLine("\n2024 - Day Two - Part 2: Calculate safe reports with tolerance");
 
         #endregion
 

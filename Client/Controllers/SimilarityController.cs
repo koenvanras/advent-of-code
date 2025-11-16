@@ -14,7 +14,7 @@ namespace Client.Controllers
 
         public int CalculateSimilarityScore()
         {
-            // Declare and initialize the lists to calculate distance
+            // Declare and initialize the lists to calculate similarity
             List<int> listOne = File.ReadLines("./2024_1.txt")
                                 .Select(line => int.Parse(line.Split((char[])null, StringSplitOptions.RemoveEmptyEntries)[0]))
                                 .ToList();

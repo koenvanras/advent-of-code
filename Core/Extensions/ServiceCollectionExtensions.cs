@@ -11,6 +11,7 @@ namespace Core.Extensions
             // Register services
             services.AddScoped<IDistanceService, DistanceService>();
             services.AddScoped<ISimilarityService, SimilarityService>();
+            services.AddScoped<IRedNoseReportService, RedNoseReportService>();
 
             return services;
         }
